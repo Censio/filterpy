@@ -52,10 +52,11 @@ def test_sigma_plot():
     assert max(Xi1[:,1]) > max(Xi0[:,1])
 
 def test_julier_weights():
-    for n in range(1,15):
-        for k in np.linspace(0,5,0.1):
-            Wm = UKF.weights(n, k)
-
+    for n in range(1, 15):
+        for k in np.linspace(0, 5, 51):
+            jp = JulierSigmaPoints(n, k)
+            Wm = jp.weights()[0]
+            Wc = jp.weights()[1]
             assert abs(sum(Wm) - 1) < 1.e-12
 
 
