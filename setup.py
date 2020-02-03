@@ -40,7 +40,7 @@ setup(
     ],
     tests_require = [
         'pytest'
-    ]
+    ],
     package_data={
         'filterpy': ['README.rst', 'changelog.txt', 'LICENSE.txt'],
     },
